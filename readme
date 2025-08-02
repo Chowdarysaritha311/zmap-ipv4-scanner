@@ -1,0 +1,121 @@
+project/ ├── README.md ├── run_scan.sh ├── analysis/ │   └── analyze_results.py ├── results/ │   └── scan_results.csv ├── blacklist.conf └── zgrab2_output/ └── http_output.json
+
+README.md
+
+🌐 ZMap IPv4 Network Scanner Project
+
+This project demonstrates how to use ZMap to scan a specified IP range for open ports and services. Optional extension includes protocol-level banner grabbing with ZGrab2 and analysis in Python.
+
+🚀 Features
+
+High-speed IPv4 scanning using ZMap
+
+Optional application-layer protocol banner grabbing using ZGrab2
+
+Result parsing and analysis using Python (Pandas)
+
+Result storage in CSV format
+
+
+📁 Project Structure
+
+run_scan.sh: Shell script to run a ZMap scan
+
+analysis/analyze_results.py: Python script to analyze scan results
+
+results/scan_results.csv: Output file with scanned IPs
+
+blacklist.conf: IPs to exclude from scan (if needed)
+
+zgrab2_output/: Output from ZGrab2 banner grabbing
+
+assets/: Folder to store demo screenshots and visuals
+
+
+⚙️ Requirements
+
+Linux OS (Ubuntu preferred)
+
+ZMap installed
+
+Python 3.x
+
+pandas (pip install pandas)
+
+
+🧪 Usage
+
+Step 1: Run ZMap Scan
+
+chmod +x run_scan.sh
+./run_scan.sh
+
+Step 2: Analyze Results
+
+python3 analysis/analyze_results.py
+
+📸 Screenshots
+
+🔹 Terminal Scan Output
+
+
+
+🔹 CSV File Preview
+
+
+
+🔹 Python Analysis Output
+
+
+
+🔹 ZGrab2 Banner Output (Optional)
+
+
+
+🎥 Project Demo
+
+Watch the full demo here: YouTube Demo Link
+
+
+---
+
+run_scan.sh
+
+#!/bin/bash
+
+Safe lab IP range example (edit for your lab)
+
+IP_RANGE="192.168.1.0/24" OUTPUT_FILE="results/scan_results.csv" PORT=80 BLACKLIST="blacklist.conf"
+
+Create output directory if not exists
+
+mkdir -p results
+
+Run ZMap scan
+
+sudo zmap -p $PORT -b $BLACKLIST -o $OUTPUT_FILE $IP_RANGE
+
+
+---
+
+analysis/analyze_results.py
+
+import pandas as pd
+
+file_path = "results/scan_results.csv" df = pd.read_csv(file_path, header=None) df.columns = ["IP"]
+
+print("\n✅ ZMap Scan Analysis") print("Total Live Hosts:", len(df)) print("\nSample Results:") print(df.head())
+
+Save processed version (optional)
+
+df.to_csv("results/processed_scan.csv", index=False)
+
+
+---
+
+blacklist.conf
+
+Enter one IP address per line to exclude from scan
+
+127.0.0.1 192.168.1.1
+
