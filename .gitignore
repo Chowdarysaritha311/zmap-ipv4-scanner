@@ -1,0 +1,5 @@
+# Ignore scan results and Python cache
+scan_results.csv
+__pycache__/
+*.pyc
+.env
