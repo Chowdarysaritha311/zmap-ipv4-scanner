@@ -1,0 +1,10 @@
+zmap-ipv4-scanner/
+├── run_scan.sh
+├── analyze_results.py
+├── README.md
+├── .gitignore
+├── LICENSE
+└── assets/
+    ├── scan_result_terminal.png
+    ├── scan_result_csv.png
+    └── python_analysis.png
