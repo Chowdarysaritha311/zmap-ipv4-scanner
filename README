@@ -1,4 +1,8 @@
-project/ ├── README.md ├── run_scan.sh ├── analysis/ │   └── analyze_results.py ├── results/ │   └── scan_results.csv ├── blacklist.conf └── zgrab2_output/ └── http_output.json
+project/ ├── README.md 
+├── run_scan.sh ├── analysis/ │
+└── analyze_results.py ├── results/ │   
+└── scan_results.csv ├── blacklist.conf
+└── zgrab2_output/ └── http_output.json
 
 README.md
 
